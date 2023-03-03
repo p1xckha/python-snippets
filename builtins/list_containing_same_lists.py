@@ -27,20 +27,6 @@ def print_message(list_of_lists: list[list[int]]) -> None:
     print("")
 
     
-def print_message(list_of_lists:list[list[int]]) -> None:
-    if are_all_elements_same(list_of_lists):
-        print("list_of_lists:", list_of_lists)
-        print("All lists reference to the same object")
-        list_ids = [id(lst) for lst in list_of_lists]
-        print("List IDs:", list_ids)
-        print("")
-    else:
-        print("list_of_lists:", list_of_lists)
-        print("Lists do not reference to the same object")
-        list_ids = [id(lst) for lst in list_of_lists]
-        print("List IDs:", list_ids)
-        print("")
-    
 lst = [2, 4, 6, 8]
 
 # creates a new list  with 3 references to the same list b.
