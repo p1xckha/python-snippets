@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-list's unexpected behaviors 
+unexpected behaviors of lists
 """
 
 a = [2, 4, 6, 8]
@@ -20,14 +20,14 @@ print("all first elements in lists in b are changed unexpectedly")
 print("b:", b) 
 print("")
 
-# another unexpected list's behavior
+# another unexpected behavior of lists
 b = [a.copy()] * 3
 b[1][2] = 88
 print("all 3rd elements in lists in b are changed unexpectedly")
 print("b:", b)
 print("")
 
-# use list comprehension to avoid such unexpected list's behaviors 
+# use list comprehension to avoid such unexpected behaviors of lists 
 print("b is created by list comprehension")
 b = [[0,0,0].copy() for _ in range(3)] 
 print("b:", b)
