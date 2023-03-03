@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-unexpected list's behaviors 
+list's unexpected behaviors 
 """
 
 a = [2, 4, 6, 8]
@@ -11,19 +11,19 @@ print("b:", b)
 print("")
 
 a[1] = 44 
-print("all second elements in b are changed")
+print("all second elements in lists in b are changed")
 print("b:", b) 
 print("")
 
 b[0][0] = 20
-print("all first elements in b are changed unexpectedly")
-print("b:", b) # all second elements in b are changed 
+print("all first elements in lists in b are changed unexpectedly")
+print("b:", b) 
 print("")
 
 # another unexpected list's behavior
 b = [a.copy()] * 3
 b[1][2] = 88
-print("all 3rd elements in b are changed unexpectedly")
+print("all 3rd elements in lists in b are changed unexpectedly")
 print("b:", b)
 print("")
 
