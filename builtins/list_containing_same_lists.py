@@ -11,7 +11,7 @@ def are_all_elements_same(list_of_lists: list[list[int]]) -> bool:
 
 def print_message(list_of_lists: list[list[int]]) -> None:
     """
-    Prints a message indicating whether all the lists in the lists are the same object or not.
+    Prints a message indicating whether all the lists in the list are the same object or not.
     If they are the same object, also prints their IDs.
     """
     if are_all_elements_same(list_of_lists):
@@ -44,7 +44,7 @@ def print_message(list_of_lists:list[list[int]]) -> None:
 lst = [2, 4, 6, 8]
 
 # creates a new list  with 3 references to the same list b.
-list_of_lists = [lst] * 3 # same as [b, b, b] 
+list_of_lists = [lst] * 3 # same as [lst, lst, lst] 
 print_message(list_of_lists)
 list_of_lists[0][0] = -10
 print("list_of_lists[0][0] = -10")
