@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 An index as boolean tensor for another integer tensor can be used 
-to divide the integer tensor into two class(0 and 1) 
+to divide the integer tensor into two classes(0 and 1) 
 based on a threshold value.
 
 e.g. y[bool_tensor]
@@ -16,14 +16,14 @@ bool_tensor = x > threshold_value # tensor([True, True, False, ..., False])
 # x is divided into two classes (0 and 1) based on a threshold value of 0.2.
 y = torch.zeros(x.shape[0]) # initialize
 y[bool_tensor] = 1
-print("y:", y)
 
-# show the result of bool_tensor
+# show the result 
 for i in range(len(x)):
     print("x[%d]=%.1f > %.1f is %s" %(i, x[i], threshold_value, bool_tensor[i].item()) )
 print("")
 
 print("x:", x)
+print("y:", y)
 print("bool_tensor:", bool_tensor)
 
 
