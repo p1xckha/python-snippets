@@ -9,7 +9,7 @@ In this case, condition is not evaluated due to short-circuiting.
 def find_goverment_websites(urls: list[str]) -> list[str]:
     result = []
     for url in urls:
-        if url and url.endswith(".gov"):
+        if url and url.find(".gov"):
             result.append(url)
     return result
 
@@ -28,6 +28,6 @@ except AttributeError as error:
 # No Error
 urls = [None, "https://youtube.com", "https://edx.org", "https://www.fbi.gov", "https://www.whitehouse.gov"]
 result = find_goverment_websites(urls)
-print(result)
+print("goverment's websites:", result)
 
 
