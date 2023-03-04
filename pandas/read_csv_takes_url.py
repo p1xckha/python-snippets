@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-read_csv takes filepath as well as url.
+read_csv takes a url as well as a filepath.
 see https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
 '''
 
