@@ -1,16 +1,12 @@
 # -*- coding: utf-8 -*-
-
+'''
+create 3D visualizations of all the transposed matrices of A
+'''
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 from itertools import permutations
 
-# Define matrix A
-matrix = lambda m, n, l: [[[i*100+j*10+k for k in range(1, l+1)] for j in range(1, n+1)] for i in range(1, m+1)] 
-A = matrix(2, 3, 4)
-A = np.array(A)
-
-
+# generate 3D plot for matrix A 
 def plot_matrix(A, ax, title=None):
     # Flatten A and add labels
     X = []
@@ -39,9 +35,12 @@ def plot_matrix(A, ax, title=None):
     ax.set_title(title)
     # Show plot
     
+# Define matrix A
+matrix = lambda m, n, l: [[[i*100+j*10+k for k in range(1, l+1)] for j in range(1, n+1)] for i in range(1, m+1)] 
+A = matrix(2, 3, 4)
+A = np.array(A)
 
 fig, axe = plt.subplots(2,3,  subplot_kw={'projection': '3d'}, figsize=(12, 8))
-
 perms = permutations(range(3), 3)
 
 for i, (i1, i2, i3) in enumerate(perms):
@@ -51,7 +50,7 @@ for i, (i1, i2, i3) in enumerate(perms):
     plot_matrix(A.transpose(i1, i2, i3), axe[i, j], title)
 
 plt.show()
-fig.savefig('np_transpose_plotted3D.svg')
+fig.savefig('np_transpose_plot3D.svg')
 
 
 
