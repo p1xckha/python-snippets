@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
-create 3D visualizations of all the transposed matrices of A
+create 3D visualizations of all the transposed matrices of A.
+It's like a rubik's cube
 '''
 import matplotlib.pyplot as plt
 import numpy as np
@@ -13,6 +14,7 @@ def plot_matrix(A, ax, title=None):
     Y = []
     Z = []
     labels = []
+    
     for i, row in enumerate(A):
         for j, col in enumerate(row):
             for k, val in enumerate(col):
@@ -24,17 +26,18 @@ def plot_matrix(A, ax, title=None):
     # Create 3D scatter plot with labels
     ax.scatter(X, Y, Z)
     
+    mycolors=('yellow', 'orange', 'red', 'purple')
+    
     # Add labels to points
     for x, y, z, label in zip(X, Y, Z, labels):
-        ax.text(x, y, z, label, color='red')
+        ax.text(x, y, z, label, color=mycolors[int(label/100)])
     
     # Set axis labels
     ax.set_xlabel('X Label')
     ax.set_ylabel('Y Label')
     ax.set_zlabel('Z Label')
     ax.set_title(title)
-    # Show plot
-    
+
 # Define matrix A
 matrix = lambda m, n, l: [[[i*100+j*10+k for k in range(1, l+1)] for j in range(1, n+1)] for i in range(1, m+1)] 
 A = matrix(2, 3, 4)
