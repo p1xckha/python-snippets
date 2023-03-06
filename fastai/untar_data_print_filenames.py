@@ -29,7 +29,7 @@ def print_filenames(path, first=3, last=3, omit=True):
 # Download url using FastDownload.get
 save_dir = untar_data(URLs.PETS) # ~/.fastai/data/oxford-iiit-pet
 
-# print files in ~/.fastai
+# print files in ~/.fastai/data/oxford-iiit-pet
 print_filenames(save_dir)
 
 # message
