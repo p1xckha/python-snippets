@@ -55,7 +55,7 @@ class DrawGifGraph():
         self.im.save(filename)
     
     def save_gif_animation(self, filename):
-        self.frames[0].save(filename, save_all=True, append_images=self.frames[1:], duration=500, loop=1)
+        self.frames[0].save(filename, save_all=True, append_images=self.frames[1:], duration=500, loop=3)
 
 def perceptron(X, Y, start=0, through_origin=True):
     w = np.zeros(2) # weight
@@ -79,7 +79,7 @@ def perceptron(X, Y, start=0, through_origin=True):
 
 def line(w:list[float],b:float): # annnotation is correct?
     assert w[1] != 0, "we assume w[1]!=0"
-    return lambda x: (-w[0]*x -b)/w[1] 
+    return lambda x,w0=w[0],w1=w[1]: (-w0*x -b)/w1 
 
 ##################################
 
