@@ -34,7 +34,7 @@ class DrawGifGraph():
         draw = ImageDraw.Draw(self.im)
         draw.line([(x1,y1),(x2,y2)], fill=fill)
         
-    def draw_axis(self):
+    def draw_axes(self):
         self.draw_line(self.offsetx,0, self.offsetx, self.width)
         self.draw_line(0,self.offsety, self.width, self.offsety)
     
@@ -60,7 +60,7 @@ class DrawGifGraph():
 def perceptron(X, Y, start=0, through_origin=True):
     w = np.zeros(2) # weight
     b = 0 # bias
-    w_list = [] # list for weights
+    w_list = [] # list of numpy arrays of weights
     b_list = [] # list for bias
     i = start
     cnt = 0
@@ -77,12 +77,11 @@ def perceptron(X, Y, start=0, through_origin=True):
     return w_list, b_list
 
 
-def line(w:list[float],b:float): # annnotation is correct?
+def line(w:list[float],b:float): 
     assert w[1] != 0, "we assume w[1]!=0"
     return lambda x,w0=w[0],w1=w[1]: (-w0*x -b)/w1 
 
 ##################################
-
 
 X = np.array([
 [-1,-1],
@@ -96,33 +95,35 @@ Y = np.array([
     1
 ])
 
-w_list, b_list = perceptron(X, Y, 0, True)
-print(w_list)
-print(b_list) 
 
+start = 0
+w_list, b_list = perceptron(X, Y, start, True)
+
+print(f"training data:{X.tolist()}")
+print(f"labels:{Y}")
+print(f"list of weights: {w_list}" )
+print(f"list of bias: {b_list}") 
 gifgraph = DrawGifGraph()
 
 gifgraph.times = 10
 xmin = -15
 xmax = 15
-ymin = -15
-ymax = 15
+
 # Loop through a range of values to create the animation frames
 for i in range(len(w_list)):
     h = line(w_list[i], b_list[i]) 
     x1, y1 = gifgraph.xy2wd(xmin, h(xmin))
     x2, y2 = gifgraph.xy2wd(xmax, h(xmax))
     gifgraph.draw_line(x1, y1, x2, y2)
-    gifgraph.draw_axis()
+    gifgraph.draw_axes()
 
     # Draw the points and color them based on their classification
     for j, point in enumerate(X):
         color = (255, 0, 0) if Y[j] == 1 else (0, 0, 255)
         x, y = gifgraph.xy2wd(point[0], point[1])
-        r = 2 if i % len(X) == j else 0.5
-        gifgraph.draw_point(x, y, r, fill=color)
+        gifgraph.draw_point(x, y, r=0.5, fill=color)
     gifgraph.add_frame(gifgraph.im)
     gifgraph.clear_im()
     
 # Save the sequence as an animated GIF
-gifgraph.save_gif_animation('percep.gif')
+gifgraph.save_gif_animation('perceptron.gif')
