@@ -119,7 +119,8 @@ for i in range(len(w_list)):
     for j, point in enumerate(X):
         color = (255, 0, 0) if Y[j] == 1 else (0, 0, 255)
         x, y = gifgraph.xy2wd(point[0], point[1])
-        gifgraph.draw_point(x, y, fill=color)
+        r = 2 if i % len(X) == j else 0.5
+        gifgraph.draw_point(x, y, r, fill=color)
     gifgraph.add_frame(gifgraph.im)
     gifgraph.clear_im()
     
