@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-def global_variable_in_lambda():
+def global_variable_in_lambda() -> None:
     muls = []
     for i in range(4):
         muls.append(lambda x: x * i)
@@ -11,16 +11,16 @@ def global_variable_in_lambda():
     print(muls[1](2)) # 2000
     print("using a global variable in lambda is not recommended")
     
-def lambda_taking_global_variable():
+def lambda_taking_global_variable() -> None:
     muls = []
     for i in range(4):
-        muls.append(lambda x,j=i: x * j)
+        muls.append(lambda x, j=i: x * j)
     print(muls[0](10)) # 0
     print(muls[1](100)) # 100
 
 
-def multiplier(x):
-    def inner_function(y):
+def multiplier(x: int) -> callable:
+    def inner_function(y: int) -> int:
         return x * y
     return inner_function
 
@@ -30,7 +30,3 @@ lambda_taking_global_variable()
 
 closure = multiplier(3)
 print(closure(5))   # 15
-
-
-
-
