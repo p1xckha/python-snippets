@@ -52,8 +52,9 @@ class Mnist_plot():
             # Read the image data 
             image_size = n_rows * n_cols
             images_data = f.read(image_size * n_first)
-            images = np.frombuffer(images_data, dtype=np.uint8)
-            images = images.reshape(n_first, n_rows, n_cols)
+            images = np.frombuffer(images_data, dtype=np.uint8) # 1d np.array, shape=(n_first*28*28,)
+            images = images.reshape(n_first, n_rows, n_cols) # 3d np.array, shape=(n_first,28,28)
+            print(images.shape)
             
             # we are going to create n x n table
             n = self.least_number_larger_than_n(n_first)
