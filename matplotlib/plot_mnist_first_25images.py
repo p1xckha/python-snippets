@@ -71,6 +71,6 @@ if __name__ == '__main__':
     # plotter.download_datas(urls)
     filenames = list(map(os.path.basename, urls)) 
     filename = filenames[0] # train-images-idx3-ubyte.gz
-    plotter.plot_mnist_first_images(filename, 17)
+    plotter.plot_mnist_first_images(filename)
 
 
