@@ -30,12 +30,11 @@ class Mnist_plot():
         for url in urls:
             self.download_data(url)
     
-    
-    def least_number_larger_than_n(self, n):
+    def least_number_larger_than_n(self, n:int):
         root_n = math.ceil(math.sqrt(n))
         return root_n 
 
-    def plot_mnist_first_images(self, filename:str=None, head:int=25):
+    def plot_mnist_first_images(self, filename:str=None, n_first:int=25):
 
         if filename == None:
             url = 'http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz'
@@ -50,19 +49,19 @@ class Mnist_plot():
             print('Number of images:', n_images) # 60000
             print('Image size:', n_rows, 'x', n_cols) # 28x28
         
-            # Read the image data for the first 25 images
+            # Read the image data 
             image_size = n_rows * n_cols
-            images_data = f.read(image_size * n_images)
+            images_data = f.read(image_size * n_first)
             images = np.frombuffer(images_data, dtype=np.uint8)
-            images = images.reshape(n_images, n_rows, n_cols)
+            images = images.reshape(n_first, n_rows, n_cols)
             
             # we are going to create n x n table
-            n = self.least_number_larger_than_n(head)
+            n = self.least_number_larger_than_n(n_first)
         
             # Plot the images
             fig, axes = plt.subplots(nrows=n, ncols=n, figsize=(8, 8))
             for i, ax in enumerate(axes.flat):
-                if i < head:
+                if i < n_first:
                     ax.imshow(images[i], cmap='gray')
                 ax.axis('off')
             plt.show()
