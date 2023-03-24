@@ -56,10 +56,11 @@ class Mnist_plot():
             images = np.frombuffer(images_data, dtype=np.uint8)
             images = images.reshape(n_images, n_rows, n_cols)
             
-            m = n = self.least_number_larger_than_n(head)
+            # we are going to create n x n table
+            n = self.least_number_larger_than_n(head)
         
             # Plot the images
-            fig, axes = plt.subplots(nrows=m, ncols=n, figsize=(8, 8))
+            fig, axes = plt.subplots(nrows=n, ncols=n, figsize=(8, 8))
             for i, ax in enumerate(axes.flat):
                 if i < head:
                     ax.imshow(images[i], cmap='gray')
