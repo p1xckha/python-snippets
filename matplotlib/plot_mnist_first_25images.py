@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+'''
+download images data from MNIST and plot the image of the first 25
+'''
+
 import gzip
 import struct
 import numpy as np
@@ -11,7 +15,7 @@ class Mnist_plot():
     def __init__(self):
         self.saved_datas = []
     
-    def download_data(self, url:str=None)-> None:
+    def download_data(self, url:str)-> None:
         response = requests.get(url)
         if response.status_code == 200:
             save_filename = os.path.basename(url)
@@ -34,7 +38,10 @@ class Mnist_plot():
     def plot_mnist_first_images(self, filename:str=None, head:int=25):
 
         if filename == None:
-            filename = 'train-images-idx3-ubyte.gz'
+            url = 'http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz'
+            filename = os.path.basename(url)
+            if not os.path.exists(filename):
+                self.download_data(url)
             
         with gzip.open(filename, 'rb') as f:
             # Read the first 16 bytes of metadata
