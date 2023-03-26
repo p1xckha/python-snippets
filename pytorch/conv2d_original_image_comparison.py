@@ -27,7 +27,7 @@ laplacian_conv_output = F.conv2d(image.unsqueeze(0), laplacian_kernel.unsqueeze(
 sobel_conv_output = F.conv2d(image.unsqueeze(0), sobel_kernel.unsqueeze(0).unsqueeze(0), padding=1, stride=1) # torch.Size([1, 1, 28, 28])
 
 
-# Remove the batch dimension and permute the dimensions
+# Remove the batch dimension 
 laplacian_conv_output = laplacian_conv_output.squeeze() # torch.Size([28, 28])
 sobel_conv_output = sobel_conv_output.squeeze() # torch.Size([28, 28])
 
