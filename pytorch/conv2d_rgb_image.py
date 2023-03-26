@@ -13,12 +13,12 @@ image = Image.open('mario.png').convert('RGB')
 image_tensor = transforms.ToTensor()(image).unsqueeze(0) # torch.Size([1, 3, 871, 481])
 
 # define the kernel weights for RGB images
-blur_kernel = torch.ones(3, 3, 3, dtype=torch.float32) / 9.0 # torch.Size([1, 1, 871, 481])
+blur_kernel = torch.ones(3, 3, 3, dtype=torch.float32) / 9.0 # torch.Size([3, 3, 3])
+blur_kernel = blur_kernel.unsqueeze(0) # torch.Size([1, 3, 3, 3])
 
 # apply the convolution operation
-output = F.conv2d(image_tensor, blur_kernel.unsqueeze(0), padding=1)
+output = F.conv2d(image_tensor, blur_kernel, padding=1) # torch.Size([1, 1, 871, 481]) 
 
-print(output.shape) # torch.Size([1, 1, 871, 481]) strange. not RGB image
 torchvision.utils.save_image(output , 'mario_conv.png') 
 
 
