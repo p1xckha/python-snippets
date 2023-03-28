@@ -5,4 +5,6 @@ I created repos consisting of sample codes for each python modules.
 * others: long code
 
 # pip
-pip install opencv-python
+pip install opencv-contrib-python
+pip install caer
+
