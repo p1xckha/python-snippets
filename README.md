@@ -6,6 +6,7 @@ I created repos consisting of sample codes for each python modules.
 
 # pip
 <pre>pip install opencv-contrib-python caer
-pip install numpy scikit-learn pandas matplotlib</pre>
+pip install numpy scikit-learn pandas matplotlib
+pip install fastai</pre>
 
 
