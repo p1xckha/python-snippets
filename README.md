@@ -7,6 +7,9 @@ I created repos consisting of sample codes for each python modules.
 #  create a new environment:
 <pre>conda create --name env</pre>
 
+# activate an enviroment:
+<pre>conda activate env</pre>
+
 # pip
 <pre>
 pip install opencv-contrib-python caer
