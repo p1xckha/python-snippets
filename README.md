@@ -10,6 +10,11 @@ I created repos consisting of sample codes for each python modules.
 # activate an enviroment:
 <pre>conda activate env</pre>
 
+# install IDEs
+<pre>conda install spyder</pre>
+or
+<pre>winget install Microsoft.VisualStudioCode</pre>
+
 # pip
 <pre>
 pip install opencv-contrib-python caer
