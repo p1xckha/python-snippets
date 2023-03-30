@@ -15,6 +15,9 @@ I created repos consisting of sample codes for each python modules.
 or
 <pre>winget install Microsoft.VisualStudioCode</pre>
 
+# notebook
+<pre>conda install spyder-notebook -c conda-forge</pre>
+
 # pip
 <pre>
 pip install opencv-contrib-python caer
