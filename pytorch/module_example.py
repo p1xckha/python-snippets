@@ -17,7 +17,7 @@ class Model(nn.Module):
         return self.linear(x)
     
     def regularization(self, lambda_reg):
-        l2_regularization = torch.tensor(1.)
+        l2_regularization = torch.tensor(0.)
         for name, param in self.named_parameters():
             if 'bias' not in name:
                 l2_regularization += torch.norm(param, p=2)**2
@@ -37,7 +37,7 @@ class Data(Dataset):
         return self.len
 
 
-def train_model(x: torch.Tensor, y:torch.Tensor, model, n_epochs:int, lambda_reg:float, lr=0.01, momentum=0.9, batch_size=10):
+def train_model(x: torch.Tensor, y:torch.Tensor, model, n_epochs:int, lambda_reg:float, lr=0.01, momentum=0.9, batch_size=25):
     data = Data(x, y)
     dataloader = DataLoader(data, batch_size=batch_size, shuffle=True)
     optimizer = torch.optim.SGD(model.parameters(), lr=lr, momentum=momentum)
@@ -58,15 +58,16 @@ def train_model(x: torch.Tensor, y:torch.Tensor, model, n_epochs:int, lambda_reg
 
 # data
 N = 100
-noise = torch.randn(N, 1) * 1 # Nx1 tensor
-x = torch.randn(N, 1) # Nx1 tensor
+n_features = 1
+noise = torch.randn(N, n_features) * 0.5 # Nx1 tensor
+x = torch.randn(N, n_features) # Nx1 tensor
 a, b = 2, 3
 y = a*x + b + noise
 
 # training 
 model = Model()
-n_epochs = 100
-lambda_reg = 0.1 # regularization parameter
+n_epochs = 30
+lambda_reg = 0.01 # regularization parameter
 lr = 0.01
 train_model(x, y, model, n_epochs, lambda_reg, lr=lr)
 
