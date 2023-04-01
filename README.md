@@ -19,7 +19,7 @@ or
 <pre>conda install spyder-notebook -c conda-forge</pre>
 
 # pip
-<pre>
+<pre>pip install rope_py3k
 pip install opencv-contrib-python caer
 pip install numpy scikit-learn pandas matplotlib
 pip3 install torch torchvision torchaudio
