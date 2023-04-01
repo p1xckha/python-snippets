@@ -5,22 +5,16 @@ import matplotlib.pyplot as plt
 
 
 class Model(nn.Module):
-    def __init__(self, n_input=1, n_output=1):
+    def __init__(self, in_features:int=1, out_features:int=1):
         super().__init__()
-        self.linear = nn.Linear(n_input, n_output)
+        self.linear = nn.Linear(in_features, out_features)
         self.criterion = nn.MSELoss()
-        
-        self.n_input = n_input
-        self.n_output = n_output
-    
-    def forward(self, x):
+   
+    def forward(self, x:torch.Tensor):
         return self.linear(x)
     
     def regularization(self, lambda_reg):
-        l2_regularization = torch.tensor(0.)
-        for name, param in self.named_parameters():
-            if 'bias' not in name:
-                l2_regularization += torch.norm(param, p=2)**2
+        l2_regularization = torch.norm(model.state_dict()['linear.weight'], p=2)**2
         return lambda_reg * l2_regularization
 
 
@@ -35,6 +29,7 @@ class Data(Dataset):
     
     def __len__(self):
         return self.len
+
 
 
 def train_model(x: torch.Tensor, y:torch.Tensor, model, n_epochs:int, lambda_reg:float, lr=0.01, momentum=0.9, batch_size=25):
@@ -67,12 +62,14 @@ y = a*x + b + noise
 # training 
 model = Model()
 n_epochs = 30
-lambda_reg = 0.01 # regularization parameter
+lambda_reg = 0.05 # regularization parameter
 lr = 0.01
 train_model(x, y, model, n_epochs, lambda_reg, lr=lr)
 
 # result
-print(list(model.parameters()))
+a = model.state_dict()['linear.weight'].item()
+b = model.state_dict()['linear.bias'].item()
+print(f"predicted: y={a:.4}*x + {b:.4}")
 
 # predict
 yhat = model(x) # Nx1
