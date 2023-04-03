@@ -38,7 +38,7 @@ class Perceptron():
         return len(self.x)
     
     def __str__(self):
-        return f"{self.theta}x + {self.theta0} = 0"
+        return f"<{self.theta},x> + {self.theta0} = 0"
 
 #####################
 
@@ -46,7 +46,7 @@ class Perceptron():
     
 def perceptron_1d_example():
     # dim = 1
-    x = np.array([[-1], [0], [1], [2],[3],[5]])
+    x = np.array([[-1], [0], [1], [2],[3],[4]])
     y = np.array([-1, -1, -1, 1, 1, 1])
     p = Perceptron(x, y)
     p.fit(5)
@@ -115,8 +115,4 @@ def perceptron_3d_example():
 perceptron_1d_example()
 perceptron_2d_example()
 perceptron_3d_example()
-
-
-
-
 
