@@ -11,8 +11,8 @@ class Perceptron():
         self.mistakes = np.zeros(x.shape[0]) # (n, ) array
     
     def update(self, i):
-        d = self.x[i] @ self.theta + self.theta0
-        if d * self.y[i] <= 0:
+        distance = self.y[i] * (self.x[i] @ self.theta + self.theta0)
+        if distance <= 0:
             self.theta += self.y[i] * self.x[i]
             self.theta0 += self.y[i]
             self.mistakes[i] += 1
