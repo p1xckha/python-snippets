@@ -138,6 +138,7 @@ def update(frame):
     line.set_ydata(y)
     line1.set_ydata(y1)
     line2.set_ydata(y2)
+    ax.set_title(f"Gaussian Mixture Model (Iteration {frame})") # set the title to indicate the current iteration number
     
     return (line, line1, line2)
 
