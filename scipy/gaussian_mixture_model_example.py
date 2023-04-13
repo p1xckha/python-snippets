@@ -31,7 +31,7 @@ sigma2 = 0.5
 points2 = np.random.normal(mu2, sigma2, n_points)
 
 # Combine the points into a single array
-X = np.concatenate([points1, points2])
+X = np.concatenate([points1, points2]) # observed points
 
 # initialize parameter of GMM
 weights = np.array([0.5, 0.5])
@@ -108,7 +108,7 @@ ax.set_xlabel('X')
 ax.set_ylabel('PDF (Probability Density Function)')
 ax.set_title('Gaussian Mixture Model (d=1)')
 
-# plot 1d sample points on the x axis
+# plot 1d observed points on the x axis
 ax.scatter(X, [0]*len(X))
 
 # Create the line plot
