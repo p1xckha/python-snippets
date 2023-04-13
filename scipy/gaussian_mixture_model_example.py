@@ -8,7 +8,7 @@ from matplotlib.animation import FuncAnimation
 '''
 simple example of gausian mixture model (d=1)
 
-make an animaton of the convergence at the end. 
+make an animaton of the convergence.
 '''
 
 ###################################################
@@ -18,7 +18,7 @@ make an animaton of the convergence at the end.
 # np.random.seed(42) # fixed
 
 # Define the number of points in each cluster
-n_points = 10
+n_points = 50
 
 # cluster1
 mu1 = 0.0
@@ -26,7 +26,7 @@ sigma1 = 1.0
 points1 = np.random.normal(mu1, sigma1, n_points)
 
 # cluster2
-mu2 = 4.0
+mu2 = 6.0
 sigma2 = 0.5
 points2 = np.random.normal(mu2, sigma2, n_points)
 
@@ -35,8 +35,8 @@ X = np.concatenate([points1, points2]) # observed points
 
 # initialize parameter of GMM
 weights = np.array([0.5, 0.5])
-mu = np.array([6.0, 7.0])
-sigma = np.array([1.0, 2.0])
+mu = np.array([4.0, 6.0])
+sigma = np.array([1.0, 8.0])
 
 
 #########################################
@@ -117,12 +117,15 @@ ax.scatter(X, [0]*len(X))
 
 # Create the line plot
 x = np.linspace(-5, 15, 100)
-line, = ax.plot(x, norm.pdf(x, mu[0], sigma[0]) * weights[0] + norm.pdf(x, mu[1], sigma[1]) * weights[1])
+line, = ax.plot(x, norm.pdf(x, mu[0], sigma[0]) * weights[0] + norm.pdf(x, mu[1], sigma[1]) * weights[1], label='Mixture') # lines.Line2D
+line1, = ax.plot(x, norm.pdf(x, mu[0], sigma[0])* weights[0], label='Cluster1')
+line2, = ax.plot(x, norm.pdf(x, mu[1], sigma[1]) * weights[1], label='Cluster2')
+ax.legend()
 
 # Create the initialization function
 def init():
     line.set_ydata([0] * len(x))
-    return (line,)
+    return (line, line1, line2)
 
 # Create the animation function
 def update(frame):
@@ -130,11 +133,16 @@ def update(frame):
     mu = mu_history[frame]
     sigma = sigma_history[frame]
     y = norm.pdf(x, mu[0], sigma[0]) * weights[0] + norm.pdf(x, mu[1], sigma[1]) * weights[1]
+    y1 =  norm.pdf(x, mu[0], sigma[0])* weights[0]
+    y2 =  norm.pdf(x, mu[1], sigma[1]) * weights[1]
     line.set_ydata(y)
-    return (line,)
+    line1.set_ydata(y1)
+    line2.set_ydata(y2)
+    
+    return (line, line1, line2)
 
 # Create the animation
-animation = FuncAnimation(fig, update, init_func=init, frames=len(weights_history), interval=1000, blit=True)
+animation = FuncAnimation(fig, update, init_func=init, frames=len(weights_history), interval=2000, blit=True)
 animation.save('gaussian_mixture_animation.gif')
 
 # Show the animation
