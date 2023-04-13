@@ -143,7 +143,7 @@ def update(frame):
     return (line, line1, line2)
 
 # Create the animation
-animation = FuncAnimation(fig, update, init_func=init, frames=len(weights_history), interval=2000, blit=True)
+animation = FuncAnimation(fig, update, init_func=init, frames=len(weights_history), interval=1000, blit=True)
 animation.save('gaussian_mixture_animation.gif')
 
 # Show the animation
