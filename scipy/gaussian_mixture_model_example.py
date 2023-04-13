@@ -93,7 +93,11 @@ def GMM(X, weights, mu, sigma, n_iterations):
 # Run the GMM algorithm
 #========================
 weights_history, mu_history, sigma_history = GMM(X, weights, mu, sigma, n_iterations=10)
-print(weights_history, mu_history, sigma_history) # find out parameters converged
+
+# find out that parameters are converged
+print("weights_history: ", weights_history)
+print("mu_history: ", mu_history)
+print("sigma_history:", sigma_history) 
 
 
 #############################################################
