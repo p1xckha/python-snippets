@@ -64,9 +64,9 @@ def GMM(X, weights, mu, sigma, n_iterations):
 
     # Define the responsibility matrix
     R = np.zeros((n_samples, n_clusters))
-    weights_history = []
-    mu_history = []
-    sigma_history = []
+    weights_history = [weights.copy()]
+    mu_history = [mu.copy()]
+    sigma_history = [sigma.copy()]
 
     # Iterate
     for _ in range(n_iterations):
@@ -95,9 +95,9 @@ def GMM(X, weights, mu, sigma, n_iterations):
 weights_history, mu_history, sigma_history = GMM(X, weights, mu, sigma, n_iterations=10)
 
 # find out that parameters are converged
-print("weights_history: ", weights_history)
-print("mu_history: ", mu_history)
-print("sigma_history:", sigma_history) 
+print("weights_history:\n", weights_history)
+print("mu_history: \n", mu_history)
+print("sigma_history:\n", sigma_history) 
 
 
 #############################################################
@@ -134,7 +134,7 @@ def update(frame):
     return (line,)
 
 # Create the animation
-animation = FuncAnimation(fig, update, init_func=init, frames=len(weights_history), interval=500, blit=True)
+animation = FuncAnimation(fig, update, init_func=init, frames=len(weights_history), interval=1000, blit=True)
 animation.save('gaussian_mixture_animation.gif')
 
 # Show the animation
