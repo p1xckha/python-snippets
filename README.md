@@ -23,6 +23,7 @@ or
 pip install opencv-contrib-python caer
 pip install numpy scikit-learn pandas matplotlib
 pip3 install torch torchvision torchaudio
-pip install fastai</pre>
+pip install fastai
+pip install gym</pre>
 
 
