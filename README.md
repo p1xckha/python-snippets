@@ -11,7 +11,8 @@ I created repos consisting of sample codes for each python modules.
 <pre>conda activate env</pre>
 
 # install IDEs
-<pre>conda install spyder</pre>
+<pre> winget install -e --id Anaconda.Anaconda3
+conda install spyder</pre>
 or
 <pre>winget install Microsoft.VisualStudioCode</pre>
 
@@ -19,10 +20,11 @@ or
 <pre>conda install spyder-notebook -c conda-forge</pre>
 
 # pip
-<pre>pip install rope_py3k
-pip install opencv-contrib-python caer
-pip install numpy scikit-learn pandas matplotlib
+<pre>pip install numpy scikit-learn pandas matplotlib
 pip3 install torch torchvision torchaudio
+
+pip install rope_py3k
+pip install opencv-contrib-python caer
 pip install fastai
 pip install gym</pre>
 
