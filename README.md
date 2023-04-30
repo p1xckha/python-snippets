@@ -22,8 +22,8 @@ or
 # pip
 <pre>pip install numpy scikit-learn pandas matplotlib 
 pip3 install torch torchvision torchaudio 
-pip install gym 
-
+pip install gym
+conda install -c conda-forge python-lsp-server
 pip install rope_py3k
 pip install opencv-contrib-python caer
 pip install fastai
