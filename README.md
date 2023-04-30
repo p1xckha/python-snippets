@@ -20,12 +20,16 @@ or
 <pre>conda install spyder-notebook -c conda-forge</pre>
 
 # pip
-<pre>pip install numpy scikit-learn pandas matplotlib
-pip3 install torch torchvision torchaudio
+<pre>pip install numpy scikit-learn pandas matplotlib 
+pip3 install torch torchvision torchaudio 
+pip install gym 
 
 pip install rope_py3k
 pip install opencv-contrib-python caer
 pip install fastai
-pip install gym</pre>
+</pre>
 
+# gym
+<pre>winget install -e --id Microsoft.VisualStudio.2022.BuildTools # Microsoft Visual C++ 14.0 or greater</pre>
 
+<pre>pip install gym[all]</pre>
