@@ -1,8 +1,8 @@
 # python-snippets 
 I created repos consisting of sample codes for each python modules.
 
-* xxxx_example.py: typical example
-* others: long code
+# python installation
+<pre>winget install -e --id Anaconda.Anaconda3</pre>
 
 #  create a new environment:
 <pre>conda create --name env</pre>
