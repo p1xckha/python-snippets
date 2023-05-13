@@ -23,13 +23,19 @@ or
 <pre>pip install numpy scikit-learn pandas matplotlib 
 pip3 install torch torchvision torchaudio 
 pip install gym
-pip3 install stable_baselines
 pip install ipykernel
 
 conda install -c conda-forge python-lsp-server
 pip install rope_py3k
 pip install opencv-contrib-python caer
 pip install fastai
+</pre>
+
+# RL library
+<pre>pip3 install stable_baselines
+pip install keras-rl
+pip install pyqlearning
+pip install rl_coach
 </pre>
 
 # gym
