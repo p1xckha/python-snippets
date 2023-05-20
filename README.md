@@ -24,6 +24,7 @@ or
 pip3 install torch torchvision torchaudio 
 pip install gym
 pip install ipykernel
+ pip install pybullet
 
 conda install -c conda-forge python-lsp-server
 pip install rope_py3k
