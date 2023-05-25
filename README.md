@@ -17,7 +17,7 @@ or
 <pre>winget install Microsoft.VisualStudioCode</pre>
 
 # notebook
-<pre>conda install spyder-notebook -c conda-forge</pre>
+<pre>conda install -c conda-forge python-lsp-server</pre>
 
 # pip
 <pre>pip install numpy scikit-learn pandas matplotlib 
@@ -26,7 +26,6 @@ pip install gym
 pip install ipykernel
  pip install pybullet
 
-conda install -c conda-forge python-lsp-server
 pip install rope_py3k
 pip install opencv-contrib-python caer
 pip install fastai
