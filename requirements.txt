@@ -1,2 +1,17 @@
 torch
 numpy
+seaborn
+numpy
+scikit-learn
+pandas
+matplotlib 
+torchvision
+torchaudio 
+gym
+ipykernel
+pybullet
+opencv-contrib-python
+caer
+fastai
+
+
