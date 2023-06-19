@@ -13,5 +13,5 @@ pybullet
 opencv-contrib-python
 caer
 fastai
-
+diagrams
 
