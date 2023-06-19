@@ -14,4 +14,4 @@ opencv-contrib-python
 caer
 fastai
 diagrams
-
+drawsvg
