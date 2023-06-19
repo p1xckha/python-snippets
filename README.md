@@ -16,6 +16,11 @@ conda install spyder</pre>
 or
 <pre>winget install Microsoft.VisualStudioCode</pre>
 
+# graphviz
+## windows
+<pre>winget install graphviz</pre>
+https://graphviz.org/download/
+
 # notebook
 <pre>conda install -c conda-forge python-lsp-server</pre>
 
