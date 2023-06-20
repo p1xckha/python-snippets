@@ -16,3 +16,4 @@ fastai
 diagrams
 drawsvg
 IPython
+graphviz
