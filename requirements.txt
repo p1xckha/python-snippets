@@ -17,3 +17,4 @@ diagrams
 drawsvg
 IPython
 graphviz
+matplotlib_venn
