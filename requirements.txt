@@ -4,6 +4,7 @@ torch
 numpy
 seaborn
 numpy
+statsmodels
 scikit-learn
 pandas
 matplotlib 
