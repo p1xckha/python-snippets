@@ -22,7 +22,7 @@ or
 https://graphviz.org/download/
 
 # notebook
-<pre>conda install -c conda-forge python-lsp-server</pre>
+<pre>conda install spyder-notebook -c conda-forge</pre>
 
 # pip
 <pre>pip install numpy scikit-learn pandas matplotlib 
@@ -36,12 +36,6 @@ pip install opencv-contrib-python caer
 pip install fastai
 </pre>
 
-# RL library
-<pre>pip3 install stable_baselines
-pip install keras-rl
-pip install pyqlearning
-pip install rl_coach
-</pre>
 
 # gym
 <pre>winget install -e --id Microsoft.VisualStudio.2022.BuildTools # Microsoft Visual C++ 14.0 or greater</pre>
