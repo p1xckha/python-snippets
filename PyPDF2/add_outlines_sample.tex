@@ -40,12 +40,85 @@ You've successfully added outlines to your document.
 \newpage
 
 
-\section{section 8}
-Page 8 content goes here.
+\section{Useful commands}
+
+
+\begin{verbatim}
+If we have the following text, awk is useful.
+
+cat t.txt
+1 Adding Outlines 2
+2 Installing PyPDF2 3
+3 Using add outline item 4
+4 Viewing Outlines 5
+5 All Set! 6
+6 section 8 7
+7 section 9 8
+8 section 10 9
+9 section 11 10
+10 section 12 11
+11 section 13 12
+12 section 14 13
+13 section 15 14
+14 section 16 15
+15 section 17 16
+16 section 18 17
+17 section 19 18
+18 section 20 19
+19 section 21 20
+20 section 22 21
+21 section 23 22
+22 section 24 23
+23 section 25 24
+24 section 26 25
+25 section 27 26
+26 section 28 27
+27 section 29 28
+28 section 30 29
+29 Conclusion 30
+
+awk '{printf "(\"" ; for(i=1; i<=NF-1; i++) printf $i " "; print "\", " $NF ",),"}' t.txt
+\end{verbatim}
+
+
+
 \newpage
 
-\section{section 9}
-Page 9 content goes here.
+\section{awk output}
+
+\begin{verbatim}
+("1 Adding Outlines ", 2,),
+("2 Installing PyPDF2 ", 3,),
+("3 Using add outline item ", 4,),
+("4 Viewing Outlines ", 5,),
+("5 All Set! ", 6,),
+("6 section 8 ", 7,),
+("7 section 9 ", 8,),
+("8 section 10 ", 9,),
+("9 section 11 ", 10,),
+("10 section 12 ", 11,),
+("11 section 13 ", 12,),
+("12 section 14 ", 13,),
+("13 section 15 ", 14,),
+("14 section 16 ", 15,),
+("15 section 17 ", 16,),
+("16 section 18 ", 17,),
+("17 section 19 ", 18,),
+("18 section 20 ", 19,),
+("19 section 21 ", 20,),
+("20 section 22 ", 21,),
+("21 section 23 ", 22,),
+("22 section 24 ", 23,),
+("23 section 25 ", 24,),
+("24 section 26 ", 25,),
+("25 section 27 ", 26,),
+("26 section 28 ", 27,),
+("27 section 29 ", 28,),
+("28 section 30 ", 29,),
+("29 Conclusion ", 30,),
+\end{verbatim}
+
+
 \newpage
 
 \section{section 10}
