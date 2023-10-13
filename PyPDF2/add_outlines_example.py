@@ -52,7 +52,7 @@ if __name__ == "__main__":
     ]
 
     input_pdf = "add_outlines_sample.pdf" # you can download from https://github.com/p1xckha/python-snippets/tree/main/PyPDF2
-    output_pdf = "sample_output.pdf"
+    output_pdf = "add_outlines_sample_output.pdf"
     
     add_outline_to_pdf(input_pdf, output_pdf, outline_items)
 
