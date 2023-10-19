@@ -1,9 +1,14 @@
 \documentclass{article}
+\usepackage{hyperref}
+\usepackage{makeidx}
+\usepackage{listings}
+
 \title{My LaTeX Document with Outlines}
 \author{Your Name}
 \date{\today}
 
-\usepackage{hyperref}
+
+\makeindex
 
 \begin{document}
 \maketitle
@@ -18,7 +23,7 @@ In this document, we will add outlines using the \href{https://pypdf.readthedocs
 \newpage
 
 \section{Installing PyPDF2}
-Before we proceed, make sure you have PyPDF2 installed. You can install it using the following command:
+Before we proceed, make sure you have PyPDF2\index{PyPDF2} installed. You can install it using the following command:
 
 \texttt{pip install PyPDF2}
 
@@ -43,9 +48,9 @@ You've successfully added outlines to your document.
 \section{Useful commands}
 
 
-\begin{verbatim}
-If we have the following text, awk is useful.
+If we have the following text, awk\index{awk} is useful.
 
+\begin{verbatim}
 $ cat t.txt
 1 Adding Outlines 1
 2 Installing PyPDF2 2
@@ -77,9 +82,18 @@ $ cat t.txt
 28 section 30 28
 29 Conclusion 29
 
+\end{verbatim}
+
+
+\begin{verbatim}
+$ awk '{$1="(\"" $1; $NF="\", " $NF "),"; print $0}' t.txt
+
+or 
 
 $ awk '{printf "(\"" ; for(i=1; i<=NF-1; i++) printf $i " "; print "\", " $NF "),"}' t.txt
 \end{verbatim}
+
+
 
 
 
@@ -122,8 +136,19 @@ $ awk '{printf "(\"" ; for(i=1; i<=NF-1; i++) printf $i " "; print "\", " $NF ")
 
 \newpage
 
-\section{section 10}
+\section{Make the Index}
 Page 10 content goes here.
+Python\index{Python}, React\index{React}, C++\index{C++}.
+
+
+\texttt{makeindex filename.idx}
+
+
+\newpage
+
+\section{Finished}
+
+
 \newpage
 
 \section{section 11}
@@ -213,5 +238,7 @@ Page 30 content goes here.
 In conclusion, LaTeX is a powerful typesetting system.
 
 % Continue adding content and sections as needed
+
+\printindex
 
 \end{document}
