@@ -7,7 +7,7 @@ fastai
 graphviz
 gym
 ipykernel
-ipywidgets==7.7.1
+ipywidgets
 jupyterlab
 matplotlib
 matplotlib_venn
@@ -23,3 +23,13 @@ statsmodels
 torch
 torchaudio
 torchvision
+transformers
+notebook
+datasets
+accelerate
+langchain
+loralib
+sentencepiece
+einops
+bitsandbytes
+
