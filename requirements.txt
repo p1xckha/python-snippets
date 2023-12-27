@@ -42,4 +42,8 @@ langchain
 sentencepiece
 einops
 bitsandbytes
-
+jupyterlab
+notebook
+voila
+pyqt5
+pyqtwebengine
