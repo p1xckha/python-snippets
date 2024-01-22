@@ -47,3 +47,6 @@ notebook
 voila
 pyqt5
 pyqtwebengine
+fake_useragent
+
+
