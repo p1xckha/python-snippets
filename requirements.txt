@@ -1,52 +1,60 @@
-IPython
-PyPDF2
-caer
-diagrams
-drawsvg
-fastai
-graphviz
-geodatasets
-gymnasium
-ipykernel
-ipywidgets
-jupyterlab
-matplotlib
-matplotlib_venn
-networkx
-numpy
-opencv-contrib-python
-pandas
-pybullet
-pymupdf
-scikit-learn
-seaborn
-statsmodels
-notebook
+# webscrape
+fake_useragent
 
+# deep learning, AI, machine learning
+gymnasium
 torch
 torchaudio
 torchvision
 transformers
-torchvision
 datasets
 torchdata
-networkx
-
-datasets
 evaluate
 rouge_score
 loralib
 peft
-accelerate
 langchain
 sentencepiece
 einops
 bitsandbytes
+smolagents
+tools
+llama_index
+gymnasium
+gymnasium[classic-control, toy-text, atari, accept-rom-license, box2d, mujoco]
+gymnasium[other]
+numpy
+torch
+matplotlib
+pandas
+scipy
+opencv-python
+pytorch-ignite
+
+
+
+# data science
+pandas
+matplotlib
+networkx
+numpy
+scikit-learn
+seaborn
+statsmodels
+
+
+# python notebook
+ipywidgets
+ipykernel
 jupyterlab
 notebook
+IPython
 voila
-pyqt5
-pyqtwebengine
-fake_useragent
 
-
+# other packages
+PyPDF2
+#caer
+#diagrams
+drawsvg
+geodatasets
+pymupdf
