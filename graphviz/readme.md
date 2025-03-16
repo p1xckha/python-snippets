@@ -8,3 +8,6 @@ https://www.graphviz.org/download/
 
 https://stackoverflow.com/questions/52472611/how-do-i-make-sure-the-graphviz-executables-are-on-my-systems-path
 
+https://graphviz.readthedocs.io/en/stable/manual.html
+
+
