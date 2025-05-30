@@ -7,7 +7,7 @@
 # python verify_and_install_packages.py
 # =======================================
 # after pip-tools installed:
-# echo "scapy" > requirements.in 
+# echo scapy > requirements.in 
 # pip-compile --generate-hashes requirements.in
 # pip install --require-hashes -r requirements.txt
 
